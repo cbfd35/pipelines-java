@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: /usr/bin/find /home/vsts/ -size +1M > /mnt/excluded.txt
+- script: sudo /usr/bin/find /home/vsts/ -size +1M > /mnt/excluded.txt
   displayName: 'ls'
 
 - script: sudo /usr/bin/tar --exclude-from=/mnt/excluded.txt -czvf /mnt/teste1.tgz /home/vsts 
