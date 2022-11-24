@@ -10,12 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: sudo /usr/bin/tar -czvf /mnt/teste1.tgz /home/vsts --exclude-from <(/usr/bin/find /home/vsts/ -size +1M)
+- script: /usr/bin/find /home/vsts/ -size +1M > /mnt/excluded.txt
+  displayName: 'ls'
+
+- script: sudo /usr/bin/tar --exclude-from=/mnt/excluded.txt -czvf /mnt/teste1.tgz /home/vsts 
   displayName: 'Tar'
   continueOnError: true
-
-- script: whereis find
-  displayName: 'ls'
 
 - script: sudo chmod 777 /mnt/teste1.tgz
   displayName: 'chmod'
