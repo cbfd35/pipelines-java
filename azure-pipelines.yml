@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: sudo /usr/bin/tar -czvf /root/teste1.tgz /home/vsts/
+- script: sudo /bin/bash -c 'tar -czvf /root/teste1.tgz /home/vsts/'
   displayName: 'Tar'
   continueOnError: True
 
