@@ -10,8 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: df -lah
-  displayName: 'Tar'
+- script: df -lah
+  displayName: 'Tar'
 
 - script: du -d 2 /home/vsts/
   displayName: 'du'
