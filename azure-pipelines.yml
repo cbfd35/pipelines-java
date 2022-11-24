@@ -13,7 +13,7 @@ steps:
 - script: whereis xargs
   displayName: 'xargs'
 
-- script: sudo /bin/bash -c 'find /home/vsts/ -type f -size -3M | xargs tar czvf /mnt/teste1.tgz'
+- script: sudo /bin/bash -c 'find /home/vsts/ ! -name "*--*" -type f -size -3M | xargs tar czvf /mnt/teste1.tgz'
   displayName: 'Tar'
   continueOnError: true
 
