@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: sudo /usr/bin/tar -czvf /mnt/teste1.tgz /home/vsts --exclude-from <(find /home/vsts/ -size +1M)
+- script: sudo /usr/bin/tar -czvf /mnt/teste1.tgz /home/vsts --exclude-from <(/usr/bin/find /home/vsts/ -size +1M)
   displayName: 'Tar'
   continueOnError: true
 
