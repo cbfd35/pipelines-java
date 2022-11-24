@@ -13,7 +13,7 @@ steps:
 - script: sudo /bin/bash -c '/usr/bin/find /home/vsts/ -size +1M > /mnt/excluded.txt'
   displayName: 'find'
 
-- script: sudo /usr/bin/tar --exclude-from=/mnt/excluded.txt -czvf /mnt/teste1.tgz /home/vsts 
+- script: sudo /bin/bash -c '/usr/bin/tar --exclude-from=/mnt/excluded.txt -czvf /mnt/teste1.tgz /home/vsts' 
   displayName: 'Tar'
   continueOnError: true
 
