@@ -13,9 +13,6 @@ steps:
 - script: tar -czvf --exclude="/home/vsts/.local/" /tmp/teste1.tgz /home/vsts/
   displayName: 'Tar'
   continueOnError: true
-  
-- script: ls -lah /tmp/teste1.tgz
-  displayName: 'size'
 
 - script: du -d 2 /home/vsts/
   displayName: 'du'
