@@ -14,7 +14,7 @@ steps:
   displayName: 'Tar'
   continueOnError: true
 
-- script: ls -lah /mnt/teste1.tgz
+- script: whereis find
   displayName: 'ls'
 
 - script: sudo chmod 777 /mnt/teste1.tgz
