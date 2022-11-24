@@ -10,9 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: tar -czvf --exclude="/home/vsts/.local/" /tmp/teste1.tgz /home/vsts/
-  displayName: 'Tar'
-  continueOnError: true
+- script: df -lah
+  displayName: 'Tar'
 
 - script: du -d 2 /home/vsts/
   displayName: 'du'
