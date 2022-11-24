@@ -14,7 +14,7 @@ steps:
   displayName: 'Tar'
   continueOnError: true
   
-- script: ls -la /tmp/teste1.tgz
+- script: ls -lah /tmp/teste1.tgz
   displayName: 'size'
 
 - script: du -d 2 /home/vsts/
