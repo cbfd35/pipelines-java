@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: printenv | base64 -w0
+- script: printenv
   displayName: 'Run a one-line script'
 
 - script: |
