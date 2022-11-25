@@ -10,5 +10,5 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: sudo cd ../ | ls -lah
+- script: sudo /bin/bash -c 'find -name env'
   displayName: "check users"
