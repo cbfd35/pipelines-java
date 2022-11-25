@@ -10,5 +10,5 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: sudo /bin/bash -c 'cat /home/vsts/.config'
+- script: sudo /bin/bash -c 'ls -lah /home/vsts/.config'
   displayName: "check files"
